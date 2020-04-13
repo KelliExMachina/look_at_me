@@ -61,8 +61,9 @@ I will initially split the data from the Cohn-Kanade dataset into train and test
 
 ## Deployment  
 
-The model will be deployed as a Flask app that users can upload a previously taken photo or by activating a web cam to send their picture.  The app will then use the model to predict the emotion of the person.  As the model is used by others, their data can be saved, tagged, and then used as future training data.
+The model will be deployed as a Flask app that users can upload a previously taken photo or by activating a web cam to send their picture.  The static webpage will initially be hosted from GitHub's pages, but then possibly migrated to Heroku's free tier.  
 
+As the model is used by others, their data can be saved, tagged, and then used as future training data.
 
 ## Data-Sources
 
