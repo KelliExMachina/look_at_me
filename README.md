@@ -34,7 +34,7 @@ TDIRE: Images were captured using a FLIR Vue Pro camera with participants posing
 
 ## Data-Preparation
 
-There are basically two stages for my project: 1) face detection and 2) emotional detection.  I will train a cascade classifier from OpenCV and use the Viola & Jones method for the face detection.  For the second step, I will match the face image (using Eigenfaces or Fisherfaces method) to an image in a SQLite database, built from the Tufts Face Database.  For the closest matching image, I will assign a probability for the particular emotion.
+There are basically three stages for my project, each of which will utilize the OpenCV library: 1) convert the image to grayscale, 2) search for a face, and 3) draw a box around the face.  I will train a cascade classifier (from OpenCV) and use the Viola & Jones method to search for and draw a rectangle around the face.  
 
 In order to protect the data, I will implement EncryptedPickle to protect the model and data while in use.  The database content and metadata will be encrypted with the SQLCipher extension.
 
@@ -47,7 +47,7 @@ This will be a supervised learning model as the data in my dataset is tagged.  I
 
 ## Model-Evaluation
 
-- <type> Classifier
+- Cascade Classifier
 - Accuracy: %
 - Recall: %
 - The most significant features include: .  
@@ -65,11 +65,6 @@ The model will be deployed as a Flask app that users can upload a previously tak
 
 
 ## Data-Sources
-
-[![Cohn-Kanade (CK and CK+) database][1]][2]
-
-[1]: img/pitt_edu_logo.jpg   
-[2]: https://www.pitt.edu/ "Cohn-Kanade Database. Contact: Yaohan Ding YAD30@pitt.edu"  
 
 [![Tufts Face Database][3]][4]
 
@@ -90,13 +85,3 @@ Any publication using this database must reference to this
 
 For any enquires regarding the Tufts Face Database, contact: panettavisonsensinglab@gmail.com
 
-- Kanade, T., Cohn, J. F., & Tian, Y. (2000). Comprehensive database for facial
-expression analysis. Proceedings of the Fourth IEEE International Conference
-on Automatic Face and Gesture Recognition (FG'00), Grenoble, France, 46-53.
-- Lucey, P., Cohn, J. F., Kanade, T., Saragih, J., Ambadar, Z., & Matthews, I.
-(2010). The Extended Cohn-Kanade Dataset (CK+): A complete expression
-dataset for action unit and emotion-specified expression. Proceedings of the
-Third International Workshop on CVPR for Human Communicative Behavior
-Analysis (CVPR4HB 2010), San Francisco, USA, 94-101.
-
-- Request access, contact: Yaohan Ding YAD30@pitt.edu.
