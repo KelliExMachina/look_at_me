@@ -1,0 +1,2 @@
+https://arxiv.org/abs/1604.02878
+“Multi-Task Cascaded Convolutional Neural Network” (MTCNN) Kaipeng Zhang, “Joint Face Detection and Alignment Using Multitask Cascaded Convolutional Networks.”
